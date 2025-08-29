@@ -58,12 +58,12 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 21);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(682, 338);
+            this.tabControl1.Size = new System.Drawing.Size(432, 535);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPrincipal
             // 
-            this.tabPrincipal.BackColor = System.Drawing.Color.Silver;
+            this.tabPrincipal.BackColor = System.Drawing.Color.LightCoral;
             this.tabPrincipal.Controls.Add(this.btnEliminar);
             this.tabPrincipal.Controls.Add(this.btnGuardar);
             this.tabPrincipal.Controls.Add(this.btnModificar);
@@ -83,7 +83,7 @@
             this.tabPrincipal.Location = new System.Drawing.Point(4, 22);
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrincipal.Size = new System.Drawing.Size(674, 312);
+            this.tabPrincipal.Size = new System.Drawing.Size(424, 509);
             this.tabPrincipal.TabIndex = 0;
             this.tabPrincipal.Text = "tabPage1";
             // 
@@ -121,7 +121,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(17, 165);
+            this.lblDescripcion.Location = new System.Drawing.Point(17, 295);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(108, 21);
             this.lblDescripcion.TabIndex = 2;
@@ -132,7 +132,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(376, 61);
+            this.lblPrecio.Location = new System.Drawing.Point(61, 163);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(64, 21);
             this.lblPrecio.TabIndex = 3;
@@ -142,7 +142,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(376, 19);
+            this.lblStock.Location = new System.Drawing.Point(66, 208);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(59, 21);
             this.lblStock.TabIndex = 4;
@@ -152,7 +152,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(347, 101);
+            this.lblCategoria.Location = new System.Drawing.Point(37, 111);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(88, 21);
             this.lblCategoria.TabIndex = 5;
@@ -176,7 +176,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(450, 19);
+            this.txtStock.Location = new System.Drawing.Point(131, 209);
             this.txtStock.MaxLength = 10;
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 20);
@@ -184,7 +184,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(450, 61);
+            this.txtPrecio.Location = new System.Drawing.Point(131, 163);
             this.txtPrecio.MaxLength = 10;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
@@ -192,16 +192,16 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(131, 118);
+            this.txtDescripcion.Location = new System.Drawing.Point(131, 252);
             this.txtDescripcion.MaxLength = 10;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(179, 112);
+            this.txtDescripcion.Size = new System.Drawing.Size(221, 147);
             this.txtDescripcion.TabIndex = 10;
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(450, 101);
+            this.txtCategoria.Location = new System.Drawing.Point(131, 113);
             this.txtCategoria.MaxLength = 10;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(100, 20);
@@ -224,7 +224,7 @@
             this.btnModificar.BackColor = System.Drawing.Color.Orange;
             this.btnModificar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnModificar.Location = new System.Drawing.Point(282, 268);
+            this.btnModificar.Location = new System.Drawing.Point(162, 426);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(120, 33);
             this.btnModificar.TabIndex = 13;
@@ -236,11 +236,11 @@
             this.btnGuardar.BackColor = System.Drawing.Color.LawnGreen;
             this.btnGuardar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardar.Location = new System.Drawing.Point(131, 268);
+            this.btnGuardar.Location = new System.Drawing.Point(21, 426);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 33);
             this.btnGuardar.TabIndex = 14;
-            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.Text = "AGREGAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
@@ -248,7 +248,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEliminar.Location = new System.Drawing.Point(430, 268);
+            this.btnEliminar.Location = new System.Drawing.Point(301, 426);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 33);
             this.btnEliminar.TabIndex = 15;
@@ -259,8 +259,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DarkRed;
+            this.ClientSize = new System.Drawing.Size(465, 583);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPrincipal";
             this.Text = "Gestión de Inventario";

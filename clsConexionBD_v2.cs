@@ -24,7 +24,7 @@ namespace pryLantieriLucasIventario
         //comando
         //SqlCommand comandoBaseDatos;
         OleDbCommand comandoBaseDatos;
-
+        OleDbDataReader lectorDataReader;
         public string nombreBaseDeDatos;
 
         public void ConectarBD()
@@ -33,11 +33,11 @@ namespace pryLantieriLucasIventario
             {
                 //coneccionBaseDatos = new SqlConnection(cadenaConexion);
                 coneccionBaseDatos = new OleDbConnection(cadenaConexion);
-
-                nombreBaseDeDatos = coneccionBaseDatos.Database;
+                
+                nombreBaseDeDatos = coneccionBaseDatos.DataSource;
 
                 coneccionBaseDatos.Open();
-                
+
                 MessageBox.Show("Conectado a " + nombreBaseDeDatos);
             }
             catch (Exception error)
@@ -45,6 +45,22 @@ namespace pryLantieriLucasIventario
                 MessageBox.Show("Tiene un errorcito - " + error.Message);
             }     
 
+        }
+
+        public void cargarCategorias(ComboBox cbxNombres) 
+        { 
+            //creo en memoria
+            comandoBaseDatos = new OleDbCommand();
+            //cargo la conexion a la base
+            comandoBaseDatos.Connection = coneccionBaseDatos;
+            //dar inidicaciones
+            comandoBaseDatos.CommandText = "SELECT NOMBRE FROM Productos";
+            lectorDataReader = comandoBaseDatos.ExecuteReader();
+
+            while (lectorDataReader.Read()) 
+            {
+                cbxNombres.Items.Add(lectorDataReader[0]);
+            }
         }
 
     }

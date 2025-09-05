@@ -38,7 +38,6 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.cbxNombre = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,7 @@
             // tabPrincipal
             // 
             this.tabPrincipal.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.tabPrincipal.Controls.Add(this.cbxNombre);
             this.tabPrincipal.Controls.Add(this.btnEliminar);
             this.tabPrincipal.Controls.Add(this.btnGuardar);
             this.tabPrincipal.Controls.Add(this.btnModificar);
@@ -73,7 +74,6 @@
             this.tabPrincipal.Controls.Add(this.txtDescripcion);
             this.tabPrincipal.Controls.Add(this.txtPrecio);
             this.tabPrincipal.Controls.Add(this.txtStock);
-            this.tabPrincipal.Controls.Add(this.txtNombre);
             this.tabPrincipal.Controls.Add(this.txtCodigo);
             this.tabPrincipal.Controls.Add(this.lblCategoria);
             this.tabPrincipal.Controls.Add(this.lblStock);
@@ -169,14 +169,6 @@
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 8;
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(131, 71);
-            this.txtNombre.MaxLength = 10;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(179, 20);
-            this.txtNombre.TabIndex = 7;
-            // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(131, 19);
@@ -269,6 +261,14 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // cbxNombre
+            // 
+            this.cbxNombre.FormattingEnabled = true;
+            this.cbxNombre.Location = new System.Drawing.Point(131, 71);
+            this.cbxNombre.Name = "cbxNombre";
+            this.cbxNombre.Size = new System.Drawing.Size(179, 21);
+            this.cbxNombre.TabIndex = 16;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +293,6 @@
         private System.Windows.Forms.TabPage tabPrincipal;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblStock;
@@ -309,5 +308,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox cbxNombre;
     }
 }

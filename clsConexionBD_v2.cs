@@ -11,7 +11,7 @@ using System.Data.OleDb;
 
 using System.Windows.Forms;
 
-namespace pryGalizziGestionInventario
+namespace pryLantieriLucasIventario
 {
     internal class clsConexionBD
     {

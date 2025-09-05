@@ -24,7 +24,7 @@ namespace pryLantieriGestionInventario
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            clsConexionBD clsConexionBD = new clsConexionBD();
+            pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
             clsConexionBD.ConectarBD();
         }
 

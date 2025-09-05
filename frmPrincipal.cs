@@ -27,5 +27,10 @@ namespace pryLantieriGestionInventario
             clsConexionBD clsConexionBD = new clsConexionBD();
             clsConexionBD.ConectarBD();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

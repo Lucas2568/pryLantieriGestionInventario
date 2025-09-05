@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Data.OleDb;
 
 using System.Windows.Forms;
+using System.Data;
 
 namespace pryLantieriLucasIventario
 {
@@ -61,6 +62,17 @@ namespace pryLantieriLucasIventario
             {
                 cbxNombres.Items.Add(lectorDataReader[0]);
             }
+        }
+        public void cargarDatos()
+        {
+            //creo en memoria
+            comandoBaseDatos = new OleDbCommand();
+            //cargo la conexion a la base
+            comandoBaseDatos.Connection = coneccionBaseDatos;
+            //dar inidicaciones
+            comandoBaseDatos.CommandText = "INSERT INTO Productos ( Id1, categoria_de_producto, NOMBRE, observaciones) VALUES (21, 2, 'DELL', 'pantalla rota');";
+            lectorDataReader = comandoBaseDatos.ExecuteReader();
+
         }
 
     }

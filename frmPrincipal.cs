@@ -27,6 +27,7 @@ namespace pryLantieriGestionInventario
             pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
             clsConexionBD.ConectarBD();
             clsConexionBD.cargarCategorias(cbxNombre);
+            clsConexionBD.cargarDatos();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

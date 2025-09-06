@@ -34,7 +34,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
@@ -47,7 +46,8 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.cbxNombre = new System.Windows.Forms.ComboBox();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -65,12 +65,12 @@
             // tabPrincipal
             // 
             this.tabPrincipal.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.tabPrincipal.Controls.Add(this.cbxNombre);
+            this.tabPrincipal.Controls.Add(this.txtNombre);
+            this.tabPrincipal.Controls.Add(this.cbxCategoria);
             this.tabPrincipal.Controls.Add(this.btnEliminar);
             this.tabPrincipal.Controls.Add(this.btnGuardar);
             this.tabPrincipal.Controls.Add(this.btnModificar);
             this.tabPrincipal.Controls.Add(this.btnBuscar);
-            this.tabPrincipal.Controls.Add(this.txtCategoria);
             this.tabPrincipal.Controls.Add(this.txtDescripcion);
             this.tabPrincipal.Controls.Add(this.txtPrecio);
             this.tabPrincipal.Controls.Add(this.txtStock);
@@ -111,6 +111,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnModificar
             // 
@@ -135,14 +136,6 @@
             this.btnBuscar.TabIndex = 12;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(450, 101);
-            this.txtCategoria.MaxLength = 10;
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
-            this.txtCategoria.TabIndex = 11;
             // 
             // txtDescripcion
             // 
@@ -261,13 +254,21 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // cbxNombre
+            // cbxCategoria
             // 
-            this.cbxNombre.FormattingEnabled = true;
-            this.cbxNombre.Location = new System.Drawing.Point(131, 71);
-            this.cbxNombre.Name = "cbxNombre";
-            this.cbxNombre.Size = new System.Drawing.Size(179, 21);
-            this.cbxNombre.TabIndex = 16;
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Location = new System.Drawing.Point(450, 101);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(53, 21);
+            this.cbxCategoria.TabIndex = 17;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(131, 71);
+            this.txtNombre.MaxLength = 10;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(179, 20);
+            this.txtNombre.TabIndex = 18;
             // 
             // frmPrincipal
             // 
@@ -278,6 +279,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Inventario";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.tabControl1.ResumeLayout(false);
@@ -299,7 +301,6 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtStock;
@@ -308,6 +309,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ComboBox cbxNombre;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.ComboBox cbxCategoria;
     }
 }

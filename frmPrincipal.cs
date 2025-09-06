@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryLantieriLucasIventario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,13 +27,20 @@ namespace pryLantieriGestionInventario
         {
             pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
             clsConexionBD.ConectarBD();
-            clsConexionBD.cargarCategorias(cbxNombre);
-            clsConexionBD.cargarDatos();
+            clsConexionBD.cargarCategorias(cbxCategoria);
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
+            clsConexionBD.ConectarBD();
+            clsConexionBD.cargarDatos(Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(cbxCategoria.SelectedValue), Convert.ToString(txtNombre.Text), Convert.ToString(txtDescripcion.Text));
         }
     }
 }

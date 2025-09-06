@@ -48,32 +48,50 @@ namespace pryLantieriLucasIventario
 
         }
 
-        public void cargarCategorias(ComboBox cbxNombres) 
+        public void cargarCategorias(ComboBox cbxCategoria) 
         { 
             //creo en memoria
             comandoBaseDatos = new OleDbCommand();
             //cargo la conexion a la base
             comandoBaseDatos.Connection = coneccionBaseDatos;
             //dar inidicaciones
-            comandoBaseDatos.CommandText = "SELECT NOMBRE FROM Productos";
+            comandoBaseDatos.CommandText = "SELECT categoria_de_producto FROM Productos";
             lectorDataReader = comandoBaseDatos.ExecuteReader();
 
             while (lectorDataReader.Read()) 
             {
-                cbxNombres.Items.Add(lectorDataReader[0]);
+                cbxCategoria.Items.Add(lectorDataReader[0]);
             }
         }
-        public void cargarDatos()
+        public void cargarDatos(Int32 txtCodigo, Int32 cbxCategoria, string txtNombre, string txtObservaciones)
         {
-            //creo en memoria
-            comandoBaseDatos = new OleDbCommand();
-            //cargo la conexion a la base
-            comandoBaseDatos.Connection = coneccionBaseDatos;
-            //dar inidicaciones
-            comandoBaseDatos.CommandText = "INSERT INTO Productos ( Id1, categoria_de_producto, NOMBRE, observaciones) VALUES (21, 2, 'DELL', 'pantalla rota');";
-            lectorDataReader = comandoBaseDatos.ExecuteReader();
+            try
+            {
+                // Creo el comando y le asigno la conexión
+                comandoBaseDatos = new OleDbCommand();
+                comandoBaseDatos.Connection = coneccionBaseDatos;
+                comandoBaseDatos.CommandText =
+                    "INSERT INTO Productos (Id1, categoria_de_producto, NOMBRE, observaciones) " +
+                    "VALUES (ID, Categoria, Nombre, Observaciones)";
 
+                // Limpio parámetros anteriores
+                comandoBaseDatos.Parameters.Clear();
+
+                // Agrego parámetros
+                comandoBaseDatos.Parameters.AddWithValue("ID", txtCodigo);
+                comandoBaseDatos.Parameters.AddWithValue("Categoria", cbxCategoria);
+                comandoBaseDatos.Parameters.AddWithValue("Nombre", txtNombre);
+                comandoBaseDatos.Parameters.AddWithValue("Observaciones", txtObservaciones);
+
+                // Ejecuto la consulta
+                int filasAfectadas = comandoBaseDatos.ExecuteNonQuery();
+
+                MessageBox.Show($"Filas insertadas: {filasAfectadas}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar: " + ex.Message);
+            }
         }
-
     }
 }

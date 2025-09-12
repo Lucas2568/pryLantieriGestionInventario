@@ -60,10 +60,14 @@ namespace pryLantieriLucasIventario
 
             while (lectorDataReader.Read()) 
             {
-                cbxCategoria.Items.Add(lectorDataReader[0]);
+                if (!cbxCategoria.Items.Contains(Convert.ToInt32(lectorDataReader[0])))
+                  {
+                    cbxCategoria.Items.Add(lectorDataReader[0]);
+                }
+               
             }
         }
-        public void cargarDatos(Int32 txtCodigo, Int32 cbxCategoria, string txtNombre, string txtObservaciones)
+        public void cargarDatos(Int32 txtCodigo, int cbxCategoria, string txtNombre, string txtObservaciones)
         {
             try
             {
@@ -72,10 +76,7 @@ namespace pryLantieriLucasIventario
                 comandoBaseDatos.Connection = coneccionBaseDatos;
                 comandoBaseDatos.CommandText =
                     "INSERT INTO Productos (Id1, categoria_de_producto, NOMBRE, observaciones) " +
-                    "VALUES (ID, Categoria, Nombre, Observaciones)";
-
-                // Limpio parámetros anteriores
-                comandoBaseDatos.Parameters.Clear();
+                    $"VALUES ({txtCodigo}, {cbxCategoria}, {txtNombre}, {txtObservaciones})";
 
                 // Agrego parámetros
                 comandoBaseDatos.Parameters.AddWithValue("ID", txtCodigo);
@@ -87,6 +88,7 @@ namespace pryLantieriLucasIventario
                 int filasAfectadas = comandoBaseDatos.ExecuteNonQuery();
 
                 MessageBox.Show($"Filas insertadas: {filasAfectadas}");
+
             }
             catch (Exception ex)
             {

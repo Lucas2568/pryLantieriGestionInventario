@@ -28,6 +28,9 @@ namespace pryLantieriGestionInventario
             pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
             clsConexionBD.ConectarBD();
             clsConexionBD.cargarCategorias(cbxCategoria);
+
+            clsConexionBDv3 conexionSQL = new clsConexionBDv3();
+            conexionSQL.ConectarBD();
             
         }
 
@@ -40,7 +43,13 @@ namespace pryLantieriGestionInventario
         {
             pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
             clsConexionBD.ConectarBD();
-            clsConexionBD.cargarDatos(Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(cbxCategoria.SelectedValue), Convert.ToString(txtNombre.Text), Convert.ToString(txtDescripcion.Text));
+            clsConexionBD.cargarDatos(Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(cbxCategoria.Text), Convert.ToString(txtNombre.Text), Convert.ToString(txtDescripcion.Text));
+        }
+
+        
+        private void pbxSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

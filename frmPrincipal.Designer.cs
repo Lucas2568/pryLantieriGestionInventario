@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -45,11 +47,10 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.pbxSalir = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +66,7 @@
             // tabPrincipal
             // 
             this.tabPrincipal.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.tabPrincipal.Controls.Add(this.pbxSalir);
             this.tabPrincipal.Controls.Add(this.txtNombre);
             this.tabPrincipal.Controls.Add(this.cbxCategoria);
             this.tabPrincipal.Controls.Add(this.btnEliminar);
@@ -88,9 +90,27 @@
             this.tabPrincipal.TabIndex = 0;
             this.tabPrincipal.Text = "Principal";
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(131, 71);
+            this.txtNombre.MaxLength = 10;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(179, 20);
+            this.txtNombre.TabIndex = 18;
+            // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Location = new System.Drawing.Point(450, 101);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(53, 21);
+            this.cbxCategoria.Sorted = true;
+            this.cbxCategoria.TabIndex = 17;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnEliminar.Location = new System.Drawing.Point(430, 268);
@@ -103,6 +123,7 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGuardar.Location = new System.Drawing.Point(131, 268);
@@ -116,6 +137,7 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnModificar.Location = new System.Drawing.Point(282, 268);
@@ -128,6 +150,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBuscar.Location = new System.Drawing.Point(210, 11);
@@ -140,7 +163,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(131, 118);
-            this.txtDescripcion.MaxLength = 10;
+            this.txtDescripcion.MaxLength = 3000;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(179, 112);
@@ -238,37 +261,20 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(674, 312);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
+            // pbxSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
-            this.btnSalir.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(12, 405);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(120, 33);
-            this.btnSalir.TabIndex = 16;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(450, 101);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(53, 21);
-            this.cbxCategoria.TabIndex = 17;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(131, 71);
-            this.txtNombre.MaxLength = 10;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(179, 20);
-            this.txtNombre.TabIndex = 18;
+            this.pbxSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxSalir.Image = global::pryLantieriGestionInventario.Properties.Resources.logout;
+            this.pbxSalir.Location = new System.Drawing.Point(626, 6);
+            this.pbxSalir.Name = "pbxSalir";
+            this.pbxSalir.Size = new System.Drawing.Size(42, 40);
+            this.pbxSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxSalir.TabIndex = 1;
+            this.pbxSalir.TabStop = false;
+            this.pbxSalir.Click += new System.EventHandler(this.pbxSalir_Click);
             // 
             // frmPrincipal
             // 
@@ -276,7 +282,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -285,6 +290,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,8 +314,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.PictureBox pbxSalir;
     }
 }

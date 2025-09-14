@@ -29,8 +29,8 @@ namespace pryLantieriGestionInventario
             clsConexionBD.ConectarBD();
             clsConexionBD.cargarCategorias(cbxCategoria);
 
-            clsConexionBDv3 conexionSQL = new clsConexionBDv3();
-            conexionSQL.ConectarBD();
+            //clsConexionBDv3 conexionSQL = new clsConexionBDv3();
+            //conexionSQL.ConectarBD();
             
         }
 
@@ -43,13 +43,20 @@ namespace pryLantieriGestionInventario
         {
             pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
             clsConexionBD.ConectarBD();
-            clsConexionBD.cargarDatos(Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(cbxCategoria.Text), Convert.ToString(txtNombre.Text), Convert.ToString(txtDescripcion.Text));
+            clsConexionBD.cargarDatos(Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(cbxCategoria.Text), txtNombre.Text, txtDescripcion.Text, Convert.ToDecimal(txtPrecio.Text), Convert.ToString(txtStock.Text));
         }
 
-        
-        private void pbxSalir_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
+            clsConexionBD.ConectarBD();
+            clsConexionBD.buscarPorCodigo(Convert.ToInt32(txtCodigo.Text), txtNombre, txtDescripcion,txtStock, txtPrecio, cbxCategoria);
         }
+
+
+        //private void pbxSalir_Click(object sender, EventArgs e)
+        //{
+        //    Application.Exit();
+        //}
     }
 }

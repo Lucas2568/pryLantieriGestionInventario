@@ -47,17 +47,15 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pbxSalir = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPrincipal);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 21);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(682, 338);
@@ -65,8 +63,7 @@
             // 
             // tabPrincipal
             // 
-            this.tabPrincipal.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.tabPrincipal.Controls.Add(this.pbxSalir);
+            this.tabPrincipal.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabPrincipal.Controls.Add(this.txtNombre);
             this.tabPrincipal.Controls.Add(this.cbxCategoria);
             this.tabPrincipal.Controls.Add(this.btnEliminar);
@@ -109,7 +106,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEliminar.BackColor = System.Drawing.Color.Khaki;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -122,7 +119,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGuardar.BackColor = System.Drawing.Color.Khaki;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -136,7 +133,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnModificar.BackColor = System.Drawing.Color.Khaki;
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -149,7 +146,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBuscar.BackColor = System.Drawing.Color.Khaki;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -159,6 +156,7 @@
             this.btnBuscar.TabIndex = 12;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtDescripcion
             // 
@@ -264,24 +262,12 @@
             this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pbxSalir
-            // 
-            this.pbxSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxSalir.Image = global::pryLantieriGestionInventario.Properties.Resources.logout;
-            this.pbxSalir.Location = new System.Drawing.Point(626, 6);
-            this.pbxSalir.Name = "pbxSalir";
-            this.pbxSalir.Size = new System.Drawing.Size(42, 40);
-            this.pbxSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxSalir.TabIndex = 1;
-            this.pbxSalir.TabStop = false;
-            this.pbxSalir.Click += new System.EventHandler(this.pbxSalir_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(703, 356);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -290,7 +276,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,6 +301,5 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cbxCategoria;
-        private System.Windows.Forms.PictureBox pbxSalir;
     }
 }

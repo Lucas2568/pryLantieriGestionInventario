@@ -11,6 +11,7 @@ using System.Data.OleDb;
 
 using System.Windows.Forms;
 using System.Data;
+using System.Collections;
 
 namespace pryLantieriLucasIventario
 {
@@ -18,7 +19,7 @@ namespace pryLantieriLucasIventario
     {
         //cadena de conexion
         //sql - string cadenaConexion = "Server=localhost;Database=Ventas2;Trusted_Connection=True;";
-        string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../dbGestionInventario1.accdb";
+        string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../dbGestionInventario2.accdb";
         //conector
         //SqlConnection coneccionBaseDatos;
         OleDbConnection coneccionBaseDatos;
@@ -55,7 +56,7 @@ namespace pryLantieriLucasIventario
             //cargo la conexion a la base
             comandoBaseDatos.Connection = coneccionBaseDatos;
             //dar inidicaciones
-            comandoBaseDatos.CommandText = "SELECT categoria_de_producto FROM Productos";
+            comandoBaseDatos.CommandText = "SELECT Categoría FROM Productos";
             lectorDataReader = comandoBaseDatos.ExecuteReader();
 
             while (lectorDataReader.Read()) 
@@ -67,32 +68,60 @@ namespace pryLantieriLucasIventario
                
             }
         }
-        public void cargarDatos(Int32 txtCodigo, int cbxCategoria, string txtNombre, string txtObservaciones)
+        public void cargarDatos(Int32 txtCodigo, Int32 cbxCategoria, string txtNombre, string txtObservaciones, decimal txtPrecio, string txtStock)
+        {
+            try 
+            {
+                coneccionBaseDatos = new OleDbConnection(cadenaConexion);
+                coneccionBaseDatos.Open();
+                comandoBaseDatos = new OleDbCommand();
+                comandoBaseDatos.Connection = coneccionBaseDatos;
+                comandoBaseDatos.CommandText = "INSERT INTO Productos (Código, Nombre, Descripción, Precio, Stock, Categoría) " +
+            $"VALUES ({txtCodigo}, '{txtNombre}', '{txtObservaciones}', {txtPrecio}, {txtStock}, {cbxCategoria})";
+                lectorDataReader = comandoBaseDatos.ExecuteReader();
+                MessageBox.Show("Producto agregado con éxito.");
+            } 
+            
+            
+            catch (Exception error) 
+            {
+                MessageBox.Show("Los datos ingresados son incorrectos. - " + error.Message);
+            }
+        }
+        public void buscarPorCodigo(int codigo, TextBox txtNombre, TextBox txtDescripcion, TextBox txtStock, TextBox txtPrecio, ComboBox cbxCategoria)
         {
             try
             {
-                // Creo el comando y le asigno la conexión
+                coneccionBaseDatos = new OleDbConnection(cadenaConexion);
+                coneccionBaseDatos.Open();
                 comandoBaseDatos = new OleDbCommand();
                 comandoBaseDatos.Connection = coneccionBaseDatos;
-                comandoBaseDatos.CommandText =
-                    "INSERT INTO Productos (Id1, categoria_de_producto, NOMBRE, observaciones) " +
-                    $"VALUES ({txtCodigo}, {cbxCategoria}, {txtNombre}, {txtObservaciones})";
+                comandoBaseDatos.CommandText = "SELECT * FROM Productos WHERE Código = @codigo";
+                comandoBaseDatos.Parameters.AddWithValue("@codigo", codigo);
+                lectorDataReader = comandoBaseDatos.ExecuteReader();
 
-                // Agrego parámetros
-                comandoBaseDatos.Parameters.AddWithValue("ID", txtCodigo);
-                comandoBaseDatos.Parameters.AddWithValue("Categoria", cbxCategoria);
-                comandoBaseDatos.Parameters.AddWithValue("Nombre", txtNombre);
-                comandoBaseDatos.Parameters.AddWithValue("Observaciones", txtObservaciones);
-
-                // Ejecuto la consulta
-                int filasAfectadas = comandoBaseDatos.ExecuteNonQuery();
-
-                MessageBox.Show($"Filas insertadas: {filasAfectadas}");
-
+                if (lectorDataReader.Read())
+                {
+                    txtNombre.Text = lectorDataReader["Nombre"].ToString();
+                    txtDescripcion.Text = lectorDataReader["Descripción"].ToString();
+                    txtStock.Text = lectorDataReader["Stock"].ToString();
+                    txtPrecio.Text = lectorDataReader["Precio"].ToString();
+                    cbxCategoria.Text = lectorDataReader["Categoría"].ToString();
+                    MessageBox.Show("Código encontrado");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró un producto con ese código.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al insertar: " + ex.Message);
+                MessageBox.Show("Error al buscar: " + ex.Message);
+            }
+            finally
+            {
+                if (coneccionBaseDatos != null)
+                    coneccionBaseDatos.Close();
             }
         }
     }

@@ -33,12 +33,6 @@ namespace pryLantieriGestionInventario
             //conexionSQL.ConectarBD();
             
         }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
@@ -53,10 +47,18 @@ namespace pryLantieriGestionInventario
             clsConexionBD.buscarPorCodigo(Convert.ToInt32(txtCodigo.Text), txtNombre, txtDescripcion,txtStock, txtPrecio, cbxCategoria);
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
+            clsConexionBD.ConectarBD();
+            clsConexionBD.modificarDatos(Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(cbxCategoria.Text), txtNombre.Text, txtDescripcion.Text, Convert.ToDecimal(txtPrecio.Text), Convert.ToString(txtStock.Text));
+        }
 
-        //private void pbxSalir_Click(object sender, EventArgs e)
-        //{
-        //    Application.Exit();
-        //}
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
+            clsConexionBD.ConectarBD();
+            clsConexionBD.eliminarProductos(Convert.ToInt32(txtCodigo.Text));
+        }
     }
 }

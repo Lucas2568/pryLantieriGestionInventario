@@ -124,5 +124,46 @@ namespace pryLantieriLucasIventario
                     coneccionBaseDatos.Close();
             }
         }
+
+        public void modificarDatos(Int32 txtCodigo, Int32 cbxCategoria, string txtNombre, string txtDescripcion, decimal txtPrecio, string txtStock)
+        {
+            try
+            {
+                coneccionBaseDatos = new OleDbConnection(cadenaConexion);
+                coneccionBaseDatos.Open();
+                comandoBaseDatos = new OleDbCommand();
+                comandoBaseDatos.Connection = coneccionBaseDatos;
+                comandoBaseDatos.CommandText = $"UPDATE Productos SET Nombre = '{txtNombre}', Descripción = '{txtDescripcion}', Precio = {txtPrecio}, Stock = {txtStock}, Categoría = {cbxCategoria} WHERE Código = {txtCodigo}";
+                lectorDataReader = comandoBaseDatos.ExecuteReader();
+                MessageBox.Show("Modificación exitosa.");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al intentar modificar el producto buscado. - " + error.Message);
+            }
+        }
+
+        public void eliminarProductos(int codigo)
+        {
+            try
+            {
+                DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar este producto?"
+                    , "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.Yes)
+                {
+                    coneccionBaseDatos = new OleDbConnection(cadenaConexion);
+                    coneccionBaseDatos.Open();
+                    comandoBaseDatos = new OleDbCommand();
+                    comandoBaseDatos.Connection = coneccionBaseDatos;
+                    comandoBaseDatos.CommandText = $"DELETE FROM Productos WHERE Código = {codigo}";
+                    comandoBaseDatos.ExecuteNonQuery();
+                    MessageBox.Show("¡El producto ha sido eliminado exitosamente!");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo eliminar el producto. - " + e.Message);
+            }
+        }
     }
 }

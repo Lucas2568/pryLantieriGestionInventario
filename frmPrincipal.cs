@@ -60,5 +60,12 @@ namespace pryLantieriGestionInventario
             clsConexionBD.ConectarBD();
             clsConexionBD.eliminarProductos(Convert.ToInt32(txtCodigo.Text));
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            frmVentas formularioVentas = new frmVentas();
+            formularioVentas.Show();
+            this.Hide();
+        }
     }
 }

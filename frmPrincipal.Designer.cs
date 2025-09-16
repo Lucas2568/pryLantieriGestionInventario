@@ -46,7 +46,7 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnVentas = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPrincipal);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -64,6 +63,7 @@
             // tabPrincipal
             // 
             this.tabPrincipal.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabPrincipal.Controls.Add(this.btnVentas);
             this.tabPrincipal.Controls.Add(this.txtNombre);
             this.tabPrincipal.Controls.Add(this.cbxCategoria);
             this.tabPrincipal.Controls.Add(this.btnEliminar);
@@ -110,7 +110,7 @@
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEliminar.Location = new System.Drawing.Point(430, 268);
+            this.btnEliminar.Location = new System.Drawing.Point(320, 262);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 33);
             this.btnEliminar.TabIndex = 15;
@@ -124,7 +124,7 @@
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardar.Location = new System.Drawing.Point(131, 268);
+            this.btnGuardar.Location = new System.Drawing.Point(52, 262);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 33);
             this.btnGuardar.TabIndex = 14;
@@ -138,7 +138,7 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnModificar.Location = new System.Drawing.Point(282, 268);
+            this.btnModificar.Location = new System.Drawing.Point(190, 262);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(120, 33);
             this.btnModificar.TabIndex = 13;
@@ -254,22 +254,26 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
-            // tabPage2
+            // btnVentas
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(674, 312);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buscar";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btnVentas.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVentas.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnVentas.Location = new System.Drawing.Point(450, 262);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(120, 33);
+            this.btnVentas.TabIndex = 19;
+            this.btnVentas.Text = "VENTAS";
+            this.btnVentas.UseVisualStyleBackColor = false;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(703, 356);
+            this.ClientSize = new System.Drawing.Size(723, 374);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -286,7 +290,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPrincipal;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCategoria;
@@ -303,5 +306,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.Button btnVentas;
     }
 }

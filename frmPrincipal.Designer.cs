@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
+            this.btnVentas = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -46,7 +48,6 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.btnVentas = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +88,20 @@
             this.tabPrincipal.TabIndex = 0;
             this.tabPrincipal.Text = "Principal";
             // 
+            // btnVentas
+            // 
+            this.btnVentas.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVentas.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnVentas.Location = new System.Drawing.Point(450, 262);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(120, 33);
+            this.btnVentas.TabIndex = 19;
+            this.btnVentas.Text = "VENTAS";
+            this.btnVentas.UseVisualStyleBackColor = false;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(131, 71);
@@ -97,6 +112,7 @@
             // 
             // cbxCategoria
             // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Location = new System.Drawing.Point(450, 101);
             this.cbxCategoria.Name = "cbxCategoria";
@@ -254,20 +270,6 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
-            // btnVentas
-            // 
-            this.btnVentas.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVentas.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentas.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVentas.Location = new System.Drawing.Point(450, 262);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(120, 33);
-            this.btnVentas.TabIndex = 19;
-            this.btnVentas.Text = "VENTAS";
-            this.btnVentas.UseVisualStyleBackColor = false;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,6 +277,7 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(723, 374);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Inventario";

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
@@ -48,13 +51,18 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPrincipal);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -270,6 +278,33 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.chartProductos);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(674, 312);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Gráfico de datos";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chartProductos
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend1);
+            this.chartProductos.Location = new System.Drawing.Point(60, 28);
+            this.chartProductos.Name = "chartProductos";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartProductos.Series.Add(series1);
+            this.chartProductos.Size = new System.Drawing.Size(564, 262);
+            this.chartProductos.TabIndex = 0;
+            this.chartProductos.Text = "chart1";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,6 +320,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPrincipal.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,5 +347,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProductos;
     }
 }

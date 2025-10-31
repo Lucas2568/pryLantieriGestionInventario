@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace pryLantieriGestionInventario
 {
@@ -28,10 +29,10 @@ namespace pryLantieriGestionInventario
             pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
             clsConexionBD.ConectarBD();
             clsConexionBD.cargarCategorias(cbxCategoria);
-
+            clsConexionBD.CargarChartStockDesdeBD(chartProductos);
             //clsConexionBDv3 conexionSQL = new clsConexionBDv3();
             //conexionSQL.ConectarBD();
-            
+
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {

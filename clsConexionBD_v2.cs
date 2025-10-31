@@ -12,6 +12,8 @@ using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Data;
 using System.Collections;
+using System.Drawing;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace pryLantieriLucasIventario
 {
@@ -164,6 +166,43 @@ namespace pryLantieriLucasIventario
             {
                 MessageBox.Show("No se pudo eliminar el producto. - " + e.Message);
             }
+        }
+        public void CargarChartStockDesdeBD(Chart chartProductos)
+        {
+            try
+            {
+                chartProductos.Series.Add("Iventario");
+                chartProductos.ChartAreas[0].AxisX.Title = "Productos";
+                chartProductos.ChartAreas[0].AxisY.Title = "Stock";
+                coneccionBaseDatos = new OleDbConnection(cadenaConexion);
+                coneccionBaseDatos.Open();
+                comandoBaseDatos = new OleDbCommand();
+                comandoBaseDatos.Connection = coneccionBaseDatos;
+                comandoBaseDatos.CommandText = "SELECT Nombre, Stock FROM Productos";
+                lectorDataReader = comandoBaseDatos.ExecuteReader();
+
+                while (lectorDataReader.Read())
+                {
+                    string producto = lectorDataReader[0].ToString();
+                    Int32 stock = Convert.ToInt32(lectorDataReader[1]);
+                    int indice = chartProductos.Series[0].Points.AddY(stock);
+                    chartProductos.Series[0].Points[indice].AxisLabel = producto;
+                    if (stock < 3)
+                    {
+                        chartProductos.Series[0].Points[indice].Color = Color.Red;
+                    }
+                    else if (stock > 10)
+                    {
+                        chartProductos.Series[0].Points[indice].Color = Color.Green;
+                    }
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No se pudieron obtener los datos solicitados");
+            }
+
         }
     }
 }

@@ -363,7 +363,7 @@
             "Código",
             "Nombre",
             "Categoría"});
-            this.cbxCategoriaBuscar.Location = new System.Drawing.Point(206, 45);
+            this.cbxCategoriaBuscar.Location = new System.Drawing.Point(187, 45);
             this.cbxCategoriaBuscar.Name = "cbxCategoriaBuscar";
             this.cbxCategoriaBuscar.Size = new System.Drawing.Size(208, 36);
             this.cbxCategoriaBuscar.TabIndex = 1;
@@ -377,7 +377,7 @@
             this.btnBuscarProducto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBuscarProducto.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProducto.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(658, 44);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(640, 44);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(180, 37);
             this.btnBuscarProducto.TabIndex = 2;
@@ -483,7 +483,7 @@
             this.txtTexto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTexto.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTexto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTexto.Location = new System.Drawing.Point(423, 44);
+            this.txtTexto.Location = new System.Drawing.Point(404, 44);
             this.txtTexto.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtTexto.Name = "txtTexto";
             this.txtTexto.PlaceholderText = "";

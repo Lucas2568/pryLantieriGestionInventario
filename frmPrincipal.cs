@@ -68,5 +68,12 @@ namespace pryLantieriGestionInventario
             formularioVentas.Show();
             this.Hide();
         }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            dgvBuscar.Rows.Clear();
+            pryLantieriLucasIventario.clsConexionBD clsConexionBD = new pryLantieriLucasIventario.clsConexionBD();
+            clsConexionBD.buscarPorCategoria(cbxCategoriaBuscar.Text, txtTexto.Text, dgvBuscar);
+        }
     }
 }
